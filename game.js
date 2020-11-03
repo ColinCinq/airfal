@@ -26,7 +26,7 @@ var scoreLocs = [
 ];
 
 var flappyBirdSource = "" +
-    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAABNCAYAAAAhOa00AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPySURBVGhD7Zi9bhUxEIW9eQCo6BAIQZEiEkV6qnRQAi/AKyA6KCgRJS1ItEAJFCRQQAUSXYo0uQhaaOAB2Ph4Pc7srH/Ge3dvIrif5HhmPLaPvV4n2ca8/t2ak+TG2cZbgQ1fnyr+P1Ht9TO9omUWUSkRWmGTitLsiEZYVhRNohlIk0OUcpOiZMfSQM2bP95anqiolICphJXyopdnaXIw2c6ULk+I0QgCNbm1OFHLTDCHsI25VrsM2SvhpFha1JRXARHevprHOKmQyNu3/ntKy1qUllMparKDHnt7VW/p1G+f9hrJipvy7au515Bbkz9KVM0EHG2/f+ftG/trRttv/WtGy1qUlubex612c3PL7JzbNk8+PTersvd+fjUHB/u9tkfX9t35wo/29oM92ObCxcvm8Z1Lpm3bxoJQzUvgxurMKLH2aJ/i47MCQ0n5Hmek8ohcjMexU/BCYY2wZdugBjEbNStAtgGye3FnvHz3vv18uKBGxAFPpLaq2hcObwMhj8edIGrwwv6iweISCfK1NYBtC0fGnU/Ad2fKH2qHt48DFt5eQ00/5PJ8p44/PluoNajnNcHjVMinmhUQbZO+Laa9dX+3F+xyHK4DQX6spkI+x7cBH+mAH411dfcG3n36jZJc7KRK9p6COCrky1q2yxjgtobi5Vk6rPKASl+SE021E2Wd5sXDHReYm5JoUNypEnzFAL6M1dIT9eP7obGHHStRjypXTX5qN1KieaxqpzAROqcmjOASeT5s2V/Ggig7WfRcxVbFQbsmJwPU9FQ2soNVnJ+hDkzWG4/P53eHBNmm7ikMRBG+wxiBvVULYuMFUb4ui+LtiJV8VM6JE59MUDzofqJQA24D6efAIqgQMlYSpZ+tAiwitjCKVV0Jq2KUKL71QPol+KMieGyUqNzWl0jl8phKFO9AtqwtMI4Tl0Ajyk1E20tbLH0tqT48VrqnCJeEXIqTzWKaXVKtQHumNBNOxqiDvgzYWSqEjA1E2UeBrxuqbeYDa8Gj9o+7B4/1REEM/sjzYEZeeh1pcBaT+a6PAMlDRYIgCoLokxAht1XuTKyd+zXwPsUzJXZjgGzL5ebo9WMrG/wz6o1QUn6qtiUFzwk21cWd6vLmh8/jRNmtG5wnovQ4pGjtIvi4sKmA4k55wgiYlE8sRfPBI6BjUXVWVGpCiqdqC4zgcGhRfGHRWOJT0CAWiROxWAyM4/KoTsS6htRHs5ElRZiY6kTMtK92P4SEL4vuWkAD2L75rP11/kq7eHvV9+nHXMASi0VwExPwKcZrW7IfYqcmzMMEBJtqW7qGxCfrueACgk21LdmP+3PBBTibgB99bVdAZtXGHAEvzsmu40a1+gAAAABJRU5ErkJggg==";
+    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAABNCAMAAAAW510GAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAzUExURQC08QAAAP///3bCLJ7qWOL/iwCOIOfLmf/qywFfEzThVMgRL+cWNTNUnuwcJN62LwAAAEq2jksAAAARdFJOU/////////////////////8AJa2ZYgAAAAlwSFlzAAAOwwAADsMBx2+oZAAAAdxJREFUSEvVlIlugzAQRCFNudIj//+1nZ0ZX0AoSitVHYONZx+760Si+073kJ8f6xeoC8SHAyoYYw8pMxA2DSWLEiC1lC2JG6mhsid5S2NLFa4oUyYkhiqZcjTL0SRRjhU5mvQTysEsUU1jCjRK1LH+G9WedpciQtnYo0xIdHYoh5PCepo6V3FHf0W9XF8PrmssoIZ+nKbp3helZ67aZAon1w1TT+FxulSUohExizRBxbylPHo0jWVNMUMeiJtaVWxHoZANVMiUO9LMvnR3wzwMw6LEGqSiJGdXBHVZEDpSonKqWJXDRKi7D/McBfNg3JdoVMRJcBw+byivpMappsIvFR9RDGl2RUw15YvP8c8IjSn35SKxijLADKBub0GuRCdeSRTFUFLtcckUS/lOXlbJxb7clL14g1Oi2O2GijwxPUOt+jqqWJ/RZqGybOxSyl/Vs9NWLL+F93X6QuXOvD1N1RXfbsmUpR2EJH4RlP/RVuYKNY2xRRJYWnNCUqooKgjeGhWFcZpiX0gbFr0VxYrLPA9VrrYvq1suAz4C8bYIDp1RRChR8GVQTKTXVHHBh4lUdJcnU5E2pi7iPRprtKHwuRxB3d8/PutJFCvW1I6Q9ATFmmepOOMxRfX9F6pfMq2hlwFJAAAAAElFTkSuQmCC";
 var spriteSheetImage = new Image();
 spriteSheetImage.src = flappyBirdSource;
 var spriteSheetCanvas = document.createElement("canvas");
@@ -45,7 +45,7 @@ function drawSpriteSheetImage(context, locRect, x, y){
     context.drawImage(spriteSheetImage, locRect.x, locRect.y, locRect.width, locRect.height, x, y, locRect.width, locRect.height);
 }
 
-var canvas, context, gameState, score, groundX = 0, birdY, birdYSpeed, birdX = 5, birdFrame = 0, activeTube, tubes = [], collisionContext, scale, slowAnimation = 0;
+var canvas, context, gameState, score, groundX = 0, birdY, birdYSpeed, birdX = 5, birdFrame = 0, activeTube, tubes = [], collisionContext, scale, slowAnimation = 0, doubleClickRestart = 0;
 var HOME = 0, GAME = 1, GAME_OVER = 2;
 
 function initGame(){
@@ -94,7 +94,13 @@ function handleUserInteraction(event){
             break;
         case GAME : birdYSpeed = -1.4;//"tap boost"
             break;
-        case GAME_OVER: startGame();
+        case GAME_OVER: 
+            if (doubleClickRestart === 1){
+                startGame();
+                doubleClickRestart = 0;
+            } else {
+                doubleClickRestart++;
+            }
             break;
     }
     if(event){
