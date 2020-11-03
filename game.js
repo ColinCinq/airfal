@@ -115,8 +115,8 @@ function renderGame(){
     renderContext.clearRect(0,0,32,32);
     collisionContext.clearRect(0,0,collisionCanvas.width, collisionCanvas.height);
     renderScore();
-    renderGround(true);
     renderTubes();
+    renderGround(true);
     updateBirdGame();
     checkCollision();
     drawSpriteSheetImage(renderContext, bgLoc, 0, 0);
@@ -125,7 +125,15 @@ function renderGame(){
 
 function renderGameOver(){
     renderContext.clearRect(0,0,32,32);
-    drawSpriteSheetImage(renderContext, gameOverLoc, Math.floor(16 - gameOverLoc.width/2), Math.floor(16 - gameOverLoc.height/2));
+    drawSpriteSheetImage(renderContext, gameOverLoc, Math.floor(16 - gameOverLoc.width/2), Math.floor(10 - gameOverLoc.height/2));
+
+    var parts = score.toString().split("");
+    var length = parts.length;
+    var startDraw = Math.floor(16 + (5 * length)/2)
+    for(var i=0; i<length; i++){
+        drawSpriteSheetImage(renderContext, scoreLocs[parseInt(parts.pop())], startDraw - 5*(i+1), 20);
+    }
+
     renderGround();
     drawSpriteSheetImage(renderContext, bgLoc, 0, 0);
     renderToScale();
